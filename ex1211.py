@@ -1,4 +1,3 @@
-
 #inicia o looping até que o usuario digite 0 nas quantidades de numeros
 while True:
     f=0
@@ -18,8 +17,10 @@ while True:
     #inicia a verificação se os numeros são iguais e se o primeiro é igual
     for i in range(len(num)-1):
         for j in range (len(num[i])):
-            if(num[i][j]==num[i+1][j] and num[i][0]==num[i+1][0]):
+            if(num[i][j]==num[i+1][j]):
                 f+=1
+            else:
+                break
 
     #printa o resultado das repetições
     print(f)
