@@ -1,3 +1,4 @@
+
 #inicia o looping até que o usuario digite 0 nas quantidades de numeros
 while True:
     f=0

@@ -32,4 +32,3 @@ while True:
         print()
     except EOFError:
         break
-
