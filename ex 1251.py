@@ -9,17 +9,18 @@ daux=list(set(d))
 daux.sort()
 #inicia a lista de contagem 
 c=[]
-#loop para contar as ocorrencias e colocar na string a letra em ASCII 
-# e a qtde de ocorrencias 
+#loop para contar as ocorrencias e colocar na como uma lista a letra 
+# em ASCII e a qtde de ocorrencias 
 for i in daux:
     
-    c.append(str(ord(i))+" "+str(d.count(i)))
+    c.append([str(ord(i)),str(d.count(i))])
 
 
 #ordenar a partir da quantidade de ocorrencias
-print(daux)
-c.sort(key= lambda k:k[2],)
-c.sort(reverse=True)
+
+c.sort(key= lambda k:k[1])
+
 
 #printar na tela :)
-print(c)
+for i in c:
+    print("%s %s"%(i[0],i[1]))
