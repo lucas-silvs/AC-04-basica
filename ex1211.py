@@ -1,3 +1,6 @@
+#URI 1211- Lista telefonica Economica
+#https://www.urionlinejudge.com.br/judge/pt/problems/view/1211
+
 
 #inicia o looping até que o usuario digite 0 nas quantidades de numeros
 while True:
