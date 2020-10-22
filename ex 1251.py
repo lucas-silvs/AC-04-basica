@@ -3,8 +3,9 @@
 
 
 while True:
+    ocorrencias=0
     try:
-        
+       
 
         #Inicia e da entrada na lista, depois gera um set auxiliar para remover 
         # os repetidos
@@ -28,7 +29,10 @@ while True:
 
         #printar na tela :)
         for i in c:
-            print("%s %s"%(i[0],i[1]))
-        print()
+            print(f'{i[0]} {i[1]}')
+        if(ocorrencias>0):
+            print()
+        else:
+            ocorrencias+=1
     except EOFError:
         break
