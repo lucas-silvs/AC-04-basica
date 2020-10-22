@@ -38,5 +38,8 @@ while True:
                 ocorrencia+=1
             for a in l:
                 print(a[1], a[2], a[0])
+
+        
+        break
            
 

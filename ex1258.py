@@ -1,22 +1,46 @@
-# EX URI 1258 - Camisetas
-# https://www.urionlinejudge.com.br/judge/pt/problems/view/1258
-
-
-
+# URI Online Judge | 1258
+final=[]
+ocorrencia=0
 while True:
 
-    q=int(input())
-    if q==0:
-        break
-
-
-    camisas=[]
-    for i in range(q):
-        nome=""
-        cortamanho=""
-        nome=input()
-        cortamanho=input().split()
-        camisas.append([nome,cortamanho[0], cortamanho[1]])
-
     
-    print(camisas)
+    # Pede quantidade de camisetas enquanto != 0
+    n = int(input())
+    # Cria vetor(nome, cor e tamanho)
+    qtCam = [[0,0,0] for i in range(n)]
+
+    # Pede nome, tamanho e cor e atribui no vetor
+    for i in range(len(qtCam)):
+        #pede o nome
+        nome = input()
+        #pede cor e tamanho e separa
+        corTam = input().split()
+        cor = corTam[0]
+        tam = corTam[1]
+        #preenche no vetor
+        qtCam[i][0] = nome
+        qtCam[i][1] = cor
+        qtCam[i][2] = tam
+        # qtCam = [[nome, cor, tam]]
+    qtCam.sort(key=lambda x:x[0])
+    qtCam.sort(key=lambda x:x[2], reverse=True)
+    qtCam.sort(key=lambda x:x[1])
+    final.append(qtCam)
+#verifica se é a primeira ocorrencia, senão add a linha
+    
+    if n == 0:
+        
+        
+        for l in final:
+            ocorrencia+=1
+            for a in l:
+                print(a[1], a[2], a[0])
+            if ocorrencia<len(final)-1:
+                print()
+            
+               
+                
+        
+        break
+           
+
