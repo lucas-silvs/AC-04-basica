@@ -4,6 +4,7 @@
 
 while True:
     ocorrencias=0
+    final=[]
     try:
        
 
@@ -25,14 +26,19 @@ while True:
         #ordenar a partir da quantidade de ocorrencias
 
         c.sort(key= lambda k:k[1])
+        final.append(c)
 
 
         #printar na tela :)
-        for i in c:
-            print(f'{i[0]} {i[1]}')
-        if(ocorrencias>0):
-            print()
-        else:
-            ocorrencias+=1
+        
     except EOFError:
         break
+        for i in final:
+            aux=i
+            for j in aux:
+                print(f'{j[0]} {j[1]}')
+            
+            print()
+
+        
+    
