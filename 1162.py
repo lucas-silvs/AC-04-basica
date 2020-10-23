@@ -4,7 +4,7 @@
 while True:
     
     q=int(input())
-    
+    resul=[]
     for j in range(q):
         swamp=0
         correto=0
@@ -33,6 +33,9 @@ while True:
                 if(vagoes[i]<vagoes[i+1]):
                     correto+=1
 
-        print(f'Optimal train swapping takes {swamp} swaps.')
+        resul.append('Optimal train swapping takes '+ str(swamp) +'swaps.')
+
+    for r in resul:
+        print(r)
 
     break
