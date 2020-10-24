@@ -15,30 +15,25 @@ for j in range(q):
     vagoes=[]
     for i in range(n):
         vagoes.append(int(q[i]))
-
-#segundo loop para verificar se as posições correspondem com o numero do vagão
-    for i in range(len(vagoes)):
-        t=1
-        s=0
-        print("indice",i)
-        #enquanto os vagões não forem ordenados igual suas posições, o swamp é executado
-        while vagoes[i] != i+1:  
-            s=0  
-            vagoes[i], vagoes[i+t] = vagoes[i+t], vagoes[i]
-            s += t 
-            t=t+1 
-            print(vagoes)
-        #o Swamp só é adicionado na variavel quando é obteve o número correto 
-        swamp+=s 
-        print("swamp add:",swamp)
-        
-        s=0
+        orde=[]
+       #  insertion sort que empurra os maiores para o ultimo 
+    for i in range(1, len(vagoes)): 
+        n = vagoes[i] 
+        j = i-1
+        while j >= 0 and n < vagoes[j] : 
+                vagoes[j + 1] = vagoes[j]
+                swamp+=1 
+                j -= 1
+                print(vagoes)
+        vagoes[j + 1] = n
 
 # adiciona lista de resultados a lista de resultados
+    print(vagoes)
     resul.append(swamp)
 #imprimi todos os 'swamps' obtidos separadamente
 for r in resul:
     print('Optimal train swapping takes',r,'swaps.')  
 
 
-#swamp=len(vagoes)-(i+1)
+
+   
