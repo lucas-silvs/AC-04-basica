@@ -4,29 +4,44 @@ while True:
     q = input()
     if q == '':
         break
+    print()
     qtde = int(q)
-final=[]
-# pede a quantidade de testes     
-for i in range(qtde):
+    f=[]
+    # pede a quantidade de testes     
+    for i in range(qtde):
     #enquanto a entrada for diferente de ' ', pede entrada.
-    lArv=[]
-    while True:
-        arv = input()
-        if arv == '':
-            break
-        lArv.append(arv)
+        lArv=[]
+        final=[]
+        
+        while True:
+            
+            arv = input()
+            if arv == '':
+                break
+            lArv.append(arv)
 
-    valor=[]
-    calc=100/len(lArv)
-    
-    #transf lArv em set
-    ordLarv = set(lArv)
-    ordLarv = list(ordLarv)
-    ordLarv.sort()
-    
-    for i in ordLarv:
-        final.append(i+" "+str(lArv.count(i) * calc))
-    
+        valor=[]
+        calc=100/len(lArv)
+        #transf lArv em set
+        ordLarv = set(lArv)
+        ordLarv = list(ordLarv)
+        ordLarv.sort()
+        
 
-for i in range(len(final)):
-    print(final[i])
+        for j in ordLarv:
+            final.append(j+" {:6.4f}".format(lArv.count(j) * calc))
+        
+        for k in final:
+            f.append(k)
+
+
+        for l in f:
+            print(l)
+        
+        if(i<(qtde-1)):
+            print()
+    
+    break
+    
+            
+

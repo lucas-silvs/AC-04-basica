@@ -15,6 +15,7 @@ while True:
         num=[]
         for i  in range (x):
             num.append(input())
+            num.sort()
 
 
         #inicia a verificação se os numeros são iguais e se o primeiro é igual
