@@ -4,21 +4,25 @@ while True:
     q = input()
     if q == '':
         break
-    print()
+    input()
     qtde = int(q)
     f=[]
     # pede a quantidade de testes     
     for i in range(qtde):
     #enquanto a entrada for diferente de ' ', pede entrada.
+        
         lArv=[]
         final=[]
         
         while True:
-            
             arv = input()
             if arv == '':
                 break
-            lArv.append(arv)
+            else:
+                lArv.append(arv)
+            
+        
+        
 
         valor=[]
         calc=100/len(lArv)
@@ -30,17 +34,23 @@ while True:
 
         for j in ordLarv:
             final.append(j+" {:6.4f}".format(lArv.count(j) * calc))
-        
+       
         for k in final:
             f.append(k)
-
-
-        for l in f:
-            print(l)
         
-        if(i<(qtde-1)):
-            print()
+        if(i<qtde-1):
+            input()
+            
+        
+        
+   
+   
+    for j in range(len(f)):
+        i=0
+        print(f[j])
+        
     
+  
     break
     
             
