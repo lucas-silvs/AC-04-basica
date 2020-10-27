@@ -1,4 +1,5 @@
 # URI Online Judge | 1260
+#https://www.urionlinejudge.com.br/judge/pt/problems/view/1260
 
 while True:
     q = input()
@@ -7,8 +8,10 @@ while True:
     input()
     qtde = int(q)
     f=[]
-    # pede a quantidade de testes     
+    # pede a quantidade de testes   
+    aux=1
     for i in range(qtde):
+        
     #enquanto a entrada for diferente de ' ', pede entrada.
         
         lArv=[]
@@ -23,6 +26,7 @@ while True:
             
         
         
+        
 
         valor=[]
         calc=100/len(lArv)
@@ -35,19 +39,27 @@ while True:
         for j in ordLarv:
             final.append(j+" {:6.4f}".format(lArv.count(j) * calc))
        
-        for k in final:
-            f.append(k)
         
-        if(i<qtde-1):
-            input()
+        f.append(final)
+
+        
+        
+        
+       
             
         
         
    
-   
-    for j in range(len(f)):
-        i=0
-        print(f[j])
+    aux=0
+    for l in f:
+        for arvo in l:
+           print(arvo)
+        aux+=1
+        if(aux<qtde):
+            print()
+
+
+    
         
     
   
