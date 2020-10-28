@@ -53,13 +53,15 @@ while True:
         
         
    #imprime cada lista separadamente e caso não seja a ultima lista, imprimi um espaço ao finalizar a impressão de uma lista
+    print()
     aux=0
     for l in f:
-        for arvo in l:
-           print(arvo)
         aux+=1
         if(aux<qtde):
             print()
+        for arvo in l:
+           print(arvo)
+        
 
 
     
