@@ -4,7 +4,7 @@ def addperm(x,l):
 def perm(l):
     if len(l) == 0:
         return [[]]
-    return [x for y in perm(l[1:]) for x in addperm(l[0],y) ]
+    return [x for y in perm(l[1:]) for x in addperm(l[0],y) ] 
 soma=[]
 qtde=int(input())
 for i in range(qtde):
