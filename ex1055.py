@@ -1,31 +1,61 @@
-def addperm(x,l):
-    return [ l[0:i] + [x] + l[i:]  for i in range(len(l)+1) ]
-
-def perm(l):
-    if len(l) == 0:
-        return [[]]
-    return [x for y in perm(l[1:]) for x in addperm(l[0],y) ] 
+aux=[]
 soma=[]
+lista=[]
+
 qtde=int(input())
 for i in range(qtde):
-    aux=input().split()
+    l=input().split()
+    aux=[int(i)for i in l]
+    aux.sort()
+    print(aux)
+    p=len(aux)//2
+    c=True
+    if(len(aux) %2==0):
+        
+        while aux!=[]:
+            if(c==True):
+                lista.insert(0,aux[len(aux)-1])
+                lista.append(aux[0])
+                del(aux[0])
+                del(aux[len(aux)-1])
+                c=False
+            else:
+                lista.insert(0,aux[0])
+                lista.append(aux[len(aux)-1])
+                del(aux[0])
+                del(aux[len(aux)-1])
+                c=True
     
-    lista=perm(aux)
-    som=0
-    p=len(lista)
-
-
-    for i in range(24):
-        s=0
-        
-        print(lista[i])
-        for n in range(len(lista[i])-1):
-            s=s+(abs(int(lista[i][n])-int(lista[i][n+1])))
-        
-        if (som<s):
-            som=s
-    soma.append(som)
-
+    else:
+         while aux!=[]:
+            if(len(aux)==1):
+                del(aux[0])
+                break
+            if(c==True):
+                lista.insert(0,aux[len(aux)-1])
+                lista.append(aux[0])
+                del(aux[0])
+                del(aux[len(aux)-1])
+                c=False
+            else:
+                lista.insert(0,aux[0])
+                lista.append(aux[len(aux)-1])
+                del(aux[0])
+                del(aux[len(aux)-1])
+                c=True
+    print(lista)
+    
+    somanumero=0
+    for i in range(len(lista)-1):
+        somanumero=somanumero+abs(lista[i]-lista[i+1])
+    soma.append(somanumero)
     print(soma)
+    
         
+        
+         
+
+        
+
+
 

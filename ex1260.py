@@ -23,7 +23,8 @@ while True:
         while True:
             arv = input()
             if arv == '':
-                break
+                lArv.append(arv)
+                False
             else:
                 lArv.append(arv)
             
@@ -52,15 +53,15 @@ while True:
             
         
         
-   #imprime cada lista separadamente e caso não seja a ultima lista, imprimi um espaço ao finalizar a impressão de uma lista
-    print()
+
     aux=0
     for l in f:
         aux+=1
-        if(aux<qtde):
-            print()
+        
         for arvo in l:
            print(arvo)
+        if(aux<qtde):
+            print()
         
 
 
