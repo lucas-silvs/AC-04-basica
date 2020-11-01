@@ -27,17 +27,37 @@ while True:
         pares.sort(key=lambda x:x[1])
         impares.sort(key=lambda x:x[0], reverse= True)
         impares.sort(key=lambda x:x[1])
-        indice=0
-        final=[]
-        for p in pares:
-            for i in impares:
-                if(i[1]>p[1]):
-                    final.append(p[0])
-                else:
-                    final.append(i[0])
-    
+    indice=-1
+    final=[]
+    imp=0
+
     print(pares)
     print()
     print(impares)
     print()
+   
+    while(impares!=[] and pares!=[]):
+        
+        indice+=1
+        if(impares==[]):
+                break
+        else:
+            while impares[0][1]==indice:
+                    final.append(impares[0][0])
+                    del(impares[0])
+                
+        print(final)
+        print("Impares:",impares)
+        
+        if(pares==[]):
+            break
+        else:   
+            while pares[0][1]==indice:
+                    final.append(pares[0][0])
+                    del(pares[0])
+        
+        print(final)
+        print("Pares:",pares)
+        
+        
     print(final)
