@@ -11,6 +11,7 @@ while True:
         # os repetidos
         d=[]
         d=list(input())
+        d.sort()
         daux=list(set(d))
         daux.sort()
         #inicia a lista de contagem 
@@ -23,19 +24,17 @@ while True:
 
 
         #ordenar a partir da quantidade de ocorrencias
-
+        c.sort(key= lambda k:k[0],reverse=True)
         c.sort(key= lambda k:k[1])
-        final.append(c)
+        aux=1
+        for i in c:
+            print(i[0],i[1])
+
+
     except EOFError:
 
         #printar na tela :
-        for i in final:
-            ocorrencias+=1
-            aux=i
-            for j in aux:
-                print(f'{j[0]} {j[1]}')
-            if ocorrencias<len(final):
-                print()
+       
         
         
         break
